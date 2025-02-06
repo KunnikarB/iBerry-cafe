@@ -1,0 +1,291 @@
+import desserts from '/data.js';
+
+const dessertsSection = document.getElementById('desserts');
+const cartSummary = document.getElementById('cart-summary');
+const shoppingCart = document.getElementById('cart-container');
+let cart = [];
+
+// ⬇️ EVENT LISTENERS ⬇️
+
+dessertsSection.addEventListener('click', manageCart);
+cartSummary.addEventListener('click', handleCartSummary);
+shoppingCart.addEventListener('click', handleShoppingCart);
+
+// ⬇️ EVENT HANDLERS ⬇️
+
+function manageCart(event) {
+  let id = Number(event.target.id.split('-')[1]);
+  let itemInCart = cart.find((item) => item.id === id);
+
+  // handle Add to Cart button
+  if (event.target.id.split('-')[0] === 'btn') {
+    if (!itemInCart) {
+      cart.push({ id: id, count: 1 });
+      renderItemButtons({ id: id, count: 1 });
+      renderCartSummary();
+    }
+  }
+
+  // handle + button
+  if (event.target.id.split('-')[0] === 'add') {
+    incrementCartItem(id);
+  }
+
+  // handle - button
+  if (event.target.id.split('-')[0] === 'sub') {
+    decrementCartItem(id);
+  }
+}
+
+function handleCartSummary(event) {
+  // handle delete in cart summary
+  if (event.target.id.split('-')[0] === 'del') {
+    deleteCartItem(event.target.id.split('-')[1]);
+  }
+
+  // handle click on confirm order button
+  if (event.target.id === 'cart-summary-confirm-btn') {
+    const body = document.querySelector('body');
+    body.classList.add('noscroll');
+    window.scroll(0, 0);
+    shoppingCart.classList.remove('hidden');
+    renderShoppingCart();
+  }
+}
+
+function handleShoppingCart(event) {
+  // handle click on start new order button (in modal)
+  if (event.target.id === 'new-order-btn') {
+    clearCartContents();
+    const body = document.querySelector('body');
+    body.classList.remove('noscroll');
+    shoppingCart.classList.add('hidden');
+  }
+}
+
+// ⬇️ HELPER FUNCTIONS ⬇️
+
+function clearCartContents() {
+  cart = [];
+  renderCartSummary();
+
+  document.querySelectorAll('.dessert-item > button').forEach((button) => {
+    const id = button.id.split('-')[1];
+    const img = document.getElementById(`img-${id}`);
+
+    button.innerHTML = `<img src="/img/icon-add-to-cart.svg" alt="Add to Cart button">Add to Cart`;
+    button.classList.add('whiteButton');
+    button.classList.remove('redButton');
+    img.classList.remove('red-border');
+  });
+}
+
+function incrementCartItem(id) {
+  const itemInCart = cart.find((item) => item.id === id);
+  const itemCount = document.getElementById(`count-${id}`);
+
+  if (!itemInCart) {
+    cart.push({ id: id, count: 1 });
+  } else {
+    itemInCart.count = itemInCart.count + 1;
+  }
+
+  itemCount.innerText = itemInCart.count;
+  renderCartSummary();
+}
+
+function decrementCartItem(id) {
+  const itemInCartIndex = cart.findIndex((item) => item.id === id);
+  const itemCount = document.getElementById(`count-${id}`);
+  const img = document.getElementById(`img-${id}`);
+
+  if (itemInCartIndex !== -1) {
+    cart[itemInCartIndex].count = cart[itemInCartIndex].count - 1;
+    itemCount.innerText = cart[itemInCartIndex].count;
+
+    if (cart[itemInCartIndex].count === 0) {
+      const button = document.getElementById(`btn-${id}`);
+      button.innerHTML = `<img src="/img/icon-add-to-cart.svg" alt="Add to Cart button">Add to Cart`;
+      button.classList.add('whiteButton');
+      button.classList.remove('redButton');
+      img.classList.remove('red-border');
+      cart.splice(itemInCartIndex, 1);
+    }
+  }
+
+  renderCartSummary();
+}
+
+function deleteCartItem(id) {
+  const itemInCartIndex = cart.findIndex((item) => item.id === Number(id));
+  const button = document.getElementById(`btn-${id}`);
+  const img = document.getElementById(`img-${id}`);
+
+  cart.splice(itemInCartIndex, 1);
+  button.innerHTML = `<img src="/img/icon-add-to-cart.svg" alt="Add to Cart button">Add to Cart`;
+  button.classList.add('whiteButton');
+  button.classList.remove('redButton');
+  img.classList.remove('red-border');
+  renderCartSummary();
+}
+
+// ⬇️ RENDER FUNCTIONS ⬇️
+
+function renderDesserts() {
+  dessertsSection.innerHTML = '';
+
+  const dessertsToRender = desserts
+    .map(
+      (dessert) => `
+        <section class="dessert-item">
+            <picture>
+                <source media="(min-width: 600px)" srcset=${
+                  dessert.image.tablet
+                }>
+                <source media="(min-width: 900px)" srcset=${
+                  dessert.image.desktop
+                }>
+                <img id="img-${dessert.id}" alt="${dessert.name}" src=${
+        dessert.image.mobile
+      }>
+            </picture>
+            <button id="btn-${
+              dessert.id
+            }" class="whiteButton"><img src="/img/icon-add-to-cart.svg" alt="Add to Cart button">Add to Cart</button>
+            <p class="dessert-category">${dessert.category}</p>
+            <h2>${dessert.name}</h2>
+            <p class="dessert-cost">${dessert.price.toFixed(2)} kr.</p>
+        </section>
+    `
+    )
+    .join('');
+
+  dessertsSection.innerHTML = `
+        <section class="dessert-items">${dessertsToRender}</section>
+    `;
+}
+
+function renderItemButtons(item) {
+  const itemButtons = document.getElementById(`btn-${item.id}`);
+  const img = document.getElementById(`img-${item.id}`);
+
+  itemButtons.innerHTML = `
+        <div class="itemButtons">
+            <button id="sub-${item.id}" class="qty-btn">-</button>
+            <p id="count-${item.id}">${item.count}</p>
+            <button id="add-${item.id}" class="qty-btn">+</button>
+        </div>
+    `;
+
+  itemButtons.classList.remove('whiteButton');
+  itemButtons.classList.add('redButton');
+  img.classList.add('red-border');
+}
+
+function renderCartSummary() {
+  cartSummary.innerHTML = '';
+
+  const cartCount = cart.reduce((total, item) => total + item.count, 0);
+  let orderTotal = 0;
+
+  const cartContents = cart
+    .map((item) => {
+      const dessertItem = desserts.find((dessert) => dessert.id === item.id);
+      orderTotal += dessertItem.price * item.count;
+
+      return `
+            <section class="cart-summary-item">
+                <div>
+                    <h2>${dessertItem.category}</h2>
+                </div>
+                    <div class="cart-summary-item-details">
+                        <p class="cart-summary-item-count">${item.count}x</p>
+                        <p class="cart-summary-item-price">@ ${dessertItem.price.toFixed(
+                          2
+                        )}</p>
+                        <p class="cart-summary-item-total">${(
+                          dessertItem.price * item.count
+                        ).toFixed(2)} kr.</p>
+                    </div>
+                
+                
+            </section>
+            
+        `;
+    })
+    .join('');
+
+  if (cart.length > 0) {
+    cartSummary.innerHTML += `
+            <h2>Your Cart (${cartCount})</h2>
+            <section>${cartContents}</section>
+            <div class="order-total">
+                <p class="order-total-label">Order Total</p>
+                <p class="order-total-price">${orderTotal.toFixed(2)} kr.</p>
+            </div>
+            
+            <button id="cart-summary-confirm-btn" class="cart-summary-confirm-btn">Confirm Order</button>
+        `;
+  } else {
+    cartSummary.innerHTML = `
+            <h2>Your Cart (${cartCount})</h2>
+            <img class="empty-cart-img" alt="The cart is empty" src="/img/illustration-empty-cart.svg">
+            <p class="empty-cart-txt">Your added items will appear here</p>
+        `;
+  }
+}
+
+function renderShoppingCart() {
+  shoppingCart.innerHTML = '';
+
+  let orderTotal = 0;
+
+  const cartContents = cart
+    .map((item) => {
+      const dessertItem = desserts.find((dessert) => dessert.id === item.id);
+      orderTotal += dessertItem.price * item.count;
+
+      return `
+            <section class="shopping-cart-summary-item">
+                <img src=${dessertItem.image.thumbnail} alt="${
+        dessertItem.name
+      }">
+                <div>
+                    <h2>${dessertItem.name}</h2>
+                    <div class="shopping-cart-summary-item-details">
+                        <p class="shopping-cart-summary-item-count">${
+                          item.count
+                        }x</p>
+                        <p class="shopping-cart-summary-item-price">@ ${dessertItem.price.toFixed(
+                          2
+                        )}</p>
+                    </div>
+                </div>
+                <p class="shopping-cart-summary-item-total">${(
+                  dessertItem.price * item.count
+                ).toFixed(2)} kr.</p>
+            </section>
+        `;
+    })
+    .join('');
+
+  shoppingCart.innerHTML = `
+        <section id="shopping-cart" class="shopping-cart">
+            <h2>Review your order</h2>
+            <section class="cart-contents">${cartContents}</section>
+            <div class="shopping-cart-total">
+                <p class="shopping-cart-total-label">Order Total</p>
+                <p id="shopping-cart-total-cost" class="shopping-cart-total-cost">${orderTotal.toFixed(
+                  2
+                )} kr.</p>
+            </div>
+
+            <section class="pay-buttons">
+                <button id="new-order-btn" class="new-order-btn">Confirm Purchase</button>
+            </section>
+        </section>
+    `;
+}
+
+renderDesserts();
+renderCartSummary();
