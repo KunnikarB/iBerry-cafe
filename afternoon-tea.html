@@ -20,39 +20,41 @@
   </head>
   <body>
     <!--nav menu section-->
-    <img
+    <header>
+      <img class="header"
       src="/images/iBerry-afternoon-tea.png"
-      style="width: 100svw"
+      style="width: 50svw;"
       alt="iBerry
     coffee lover"
     />
-    <a class="notification" href="/index.html">Home Page</a>
-    <a class="notification" href="about-us.html">About Us</a>
-    <a class="notification" href="contact.html">Contact Us</a>
+    </header>
+    <a class="notification" href="index.html">Home Page</a>
+    <a class="notification" href="pages/about-us.html">About Us</a>
+    <a class="notification" href="pages/contact.html">Contact Us</a>
     <nav class="nav">
       <input id="menu" type="checkbox" />
       <label for="menu">iBerry Menu</label>
       <ul class="menu">
         <li>
-          <a href="/pages/afternoon-tea.html">
+          <a href="#">
             <span>Afternoon tea</span>
             <i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
           </a>
         </li>
         <li>
-          <a href="/pages/breakfast.html">
+          <a href="pages/breakfast.html">
             <span>Frukost</span>
             <i class="fa-solid fa-bread-slice" aria-hidden="true"></i>
           </a>
         </li>
         <li>
-          <a href="/pages/branch.html">
+          <a href="pages/brunch.html">
             <span>Brunch</span>
             <i class="fa-solid fa-utensils" aria-hidden="true"></i>
           </a>
         </li>
         <li>
-          <a href="/pages/drinks.html">
+          <a href="pages/drinks.html">
             <span>Drinks</span>
             <i class="fa-solid fa-martini-glass" aria-hidden="true"></i>
           </a>
@@ -92,9 +94,12 @@
       </div>
       <div class="tea-set-price">
         <p style="color: #5146e1">
-          Classic set <span style="color: #ff6bbb">549 kr.</span>
+          Classic set <span style="color: #ff6bbb">390 kr.</span>
         </p>
 
+      </div>
+      <div>
+        <img src="images/afternoon-tea-menu.png" style="width: 50svw;" alt="afternoon tea menu" />
       </div>
     </section>
     <!--end of efternoon tea section-->
@@ -102,11 +107,11 @@
     <!--afternoon tea menu section-->
   <section class="container">
     <header id="cart-container" class="cart-container hidden">
-      <h2>CART</h2>
+      <!-- <h2>CART</h2> -->
     </header>
         
     <main>
-      <h2>Deserts menu</h2>
+      <h2>Deserts menu 🛍️ Take away</h2>
       <div id="desserts" class="desserts"></div>
       <div id="cart-summary" class="cart-summary"></div>
     </main>
