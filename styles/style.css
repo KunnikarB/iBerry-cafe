@@ -37,6 +37,7 @@ body {
   color: var(--white);
   width: 100%;
   background-color:var(--white);
+  margin: 0 auto;
 }
 
 .header {
@@ -226,6 +227,7 @@ body {
 /* Affternoon tea Page */
 .with-love {
   color: #ff6bbb; 
+  font-size: 1.5rem;
 }
 
 .tea-set img {
@@ -234,6 +236,10 @@ body {
 
 .tea-set-price {
   margin-bottom: 5rem;
+}
+
+.tea-set-menu {
+  width: 100%;
 }
 
 /* Breakfast Page */
@@ -401,4 +407,35 @@ main {
   color: var(--pink);
 }
 
+/* Responsive layout */
+@media screen and (max-width: 789px) {
 
+  .container {
+    width: 100%;
+  }
+
+  .profile-img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+
+  .container {
+    width: 80%;
+  }
+
+  .notification-bar a {
+    font-size: .8rem;
+    display: block;
+    margin-bottom: .5rem;
+  }
+
+}

@@ -1,21 +1,16 @@
 .container {
-  display: grid;
   place-items: center;
-  min-width: 30svh;
-  margin: 5svh auto;
-  margin-left: 10px;
-
 }
 
 .card-container {
-  display: inline-block;
-  min-width: 30svh;
-  place-items: center;
-  margin-bottom: 20svh;
+  display: flex;
+  flex-direction: column;
+  max-width: 30svh;
+  margin: 0 auto;
+  margin-bottom: 5rem;
 }
 .card {
-  width: 300px;
-  min-height: 150px;
+  width: 100%;
   background: linear-gradient(115deg, #ff6bbb 10%, #9f01ea 90%);
   border-radius: 10px;
   margin-bottom: 20px;
@@ -32,14 +27,14 @@
 }
 .card__title {
   font-weight: 700;
-  font-size: x-large;
+  font-size: 2rem;
   color: var(--white);
   display: inline-flex; 
 }
 
 .card__info {
   font-style: normal;
-  font-size: large;
+  font-size: 1.5rem;
   align-content: center;
   color: #ffffff;
   margin-top: 10px; 
@@ -47,5 +42,8 @@
 
 .profile-img {
   border-radius: 15px;
-  margin: auto;
+  width: 100%;
+  margin: 1rem auto;
+  
 }
+
