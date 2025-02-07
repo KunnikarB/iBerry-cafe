@@ -8,6 +8,7 @@
   --violet: #655be1;
   --dark-violet: #5146e1;
   --pink: #ff6bbb;
+  --brown: #69473E;
 }
 
 * {
@@ -53,13 +54,14 @@ body {
   position: relative;
   margin: auto;
   padding: 10px;
-  background: var(--violet);
+  background: var(--brown);
   border-radius: 15px;
-  color: var(--white);
+  color: var(--pink);
 }
 
 .notification:hover{
   background: var(--pink);
+  color: var(--white);
 }
 
 /* MAIN STYLES
@@ -92,8 +94,8 @@ body {
   font-size: 14px;
   cursor: pointer;
   z-index: 1;
-  background: var(--violet);
-  color: var(--white);
+  background: var(--brown);
+  color: var(--pink);
   padding-left: 13px;
   border-radius: 50%;
   transform: translateY(-50%);
@@ -101,7 +103,7 @@ body {
 }
 
 .nav [type="checkbox"] + label:hover {
-  background: var(--dark-violet);
+  background: var(--pink);
   color: var(--white);
 }
 
@@ -136,8 +138,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--violet);
-  color: var(--white);
+  background: var(--brown);
+  color: var(--pink);
 }
 
 .menu li a span {
@@ -195,13 +197,13 @@ input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid;
-  color: #655be1;
+  color: var(--pink);
   border-radius: 4px;
   resize: vertical;
 }
 
 ::placeholder {
-  color:#655be1
+  color:var(--pink);
 }
 
 .force-opaque::placeholder {
@@ -215,7 +217,7 @@ label {
 
 input[type=submit] {
   width: 20%;
-  background-color: #655be1;
+  background-color: var(--pink);
   color: white;
   padding: 12px 20px;
   border: none;
@@ -225,7 +227,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #56d8e4;
+  background-color: violet;
 }
 
 .container {
@@ -234,7 +236,7 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+  background: linear-gradient(115deg, #ff6bbb 10%, #9f01ea 90%);
 }
 
 .col-25 {
@@ -312,10 +314,10 @@ input[type=submit]:hover {
 
 .floating-container {
   position: fixed;
-  width: 100px;
-  height: 100px;
-  bottom: 0;
-  left: 0%;
+  width: 60px;
+  height: 60px;
+  bottom: 1rem;
+  right: 2.5rem;
   margin: 35px 25px;
 }
 
@@ -350,13 +352,13 @@ input[type=submit]:hover {
   position: absolute;
   width: 60px;
   height: 60px;
-  background: #655be1;
+  background: var(--brown);
   bottom: 0;
   border-radius: 50%;
   left: 0;
   right: 0;
   margin: auto;
-  color: white;
+  color: var(--pink);
   line-height: 65px;
   text-align: center;
   font-size: 23px;
@@ -409,8 +411,8 @@ input[type=submit]:hover {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .page-footer {
   position: fixed;
-  left: 8px ;
-  bottom: 0px;
+  right: 2rem ;
+  bottom: 1rem;
   display: flex;
   align-items: center;
   padding: 5px;

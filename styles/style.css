@@ -8,6 +8,7 @@
   --violet: #655be1;
   --dark-violet: #5146e1;
   --pink: #ff6bbb;
+  --brown: #69473E;
 }
 
 * {
@@ -39,7 +40,7 @@ body {
 }
 
 .header {
-  margin-bottom: 5rem;
+  margin: 5rem;
 }
 
 .logo {
@@ -49,17 +50,26 @@ body {
   display: flex;
 }
 
+.notification-bar a {
+  background-color: var(--brown);
+  color: var(--pink);
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
 .notification {
   position: relative;
+  margin-left: 1rem;
   margin: auto;
   padding: 10px;
-  background: var(--violet);
   border-radius: 15px;
-  color: var(--white);
 }
+
+
 
 .notification:hover{
   background: var(--pink);
+  color: var(--white);
 }
 
 /* MAIN STYLES
@@ -196,7 +206,7 @@ body {
 }
 
 .card {
-  width: 25svw;
+  width: 40svw;
   background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
   border-radius: 10px;
   margin: 20px;
@@ -286,10 +296,10 @@ main {
 
 .floating-container {
   position: fixed;
-  width: 100px;
-  height: 100px;
-  bottom: 0;
-  left: 0%;
+  width: 60px;
+  height: 60px;
+  bottom: 1rem;
+  right: 2rem;
   margin: 35px 25px;
 }
 
@@ -383,8 +393,8 @@ main {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .page-footer {
   position: fixed;
-  left: 8px ;
-  bottom: 0px;
+  right: 1rem ;
+  bottom: 1rem;
   display: flex;
   align-items: center;
   padding: 5px;
