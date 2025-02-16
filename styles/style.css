@@ -36,7 +36,7 @@ body {
   padding: 0 20px;
   background-color: var(--white);
   color: var(--white);
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
 .header {
@@ -54,7 +54,7 @@ body {
 .notification-bar a {
   background-color: var(--brown);
   color: var(--pink);
-  font-size: 1.5rem;
+  font-size: 20px;
   margin-left: 1rem;
 }
 
@@ -91,6 +91,7 @@ body {
 .nav [type="checkbox"] {
   position: absolute;
   left: -9999px;
+  
 }
 
 .nav [type="checkbox"] + label {
@@ -202,9 +203,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  margin-left: 10px;
+  margin: 30px;
   margin-bottom: 5rem;
+  padding: 2rem;
 }
 
 .card {
@@ -422,6 +423,11 @@ main {
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    margin: 2rem auto;
+  }
+  .header-container {
+    width: 100%;
+    margin: 2rem auto;
   }
 }
 
@@ -431,7 +437,14 @@ main {
    flex-direction: column;
     gap: 1rem;
     width: 100%;
+    margin: 2rem auto;
   }
+
+  .header-container {
+    width: 100%;
+    margin: 2rem auto;
+  }
+
 }
 
 @media screen and (max-width: 425px) {
@@ -442,11 +455,11 @@ main {
 
   .notification-bar {
     width: 100%;
-    margin: 0 50px;
+    margin: 0 70px;
   }
 
   .afternoon-tea {
-    margin: 2rem 8rem;
+    margin: 2rem 6rem;
   }
 
   .notification-bar a {
@@ -456,9 +469,29 @@ main {
 
   .nav {
     width: 100%;
-    margin:300px 60px 0;
+    margin:300px 70px 0;
   }
+  img {
+    width: 20rem;
+    margin: 0 auto;
+}
+ .with-love {
+   font-size: 1.3rem;
+   margin-left: 80px;
+   width: 100%;
+ }
 
+ .afternoon-tea img {
+   width: 15rem;
+ }
+ .container {
+   margin: 2rem auto;
+   width: 100%;
+ }
+ .header-container {
+   width: 100%;
+   margin: 2rem auto;
+ }
 }
 
 @media screen and (max-width: 375px) {
