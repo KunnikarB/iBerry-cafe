@@ -231,6 +231,10 @@ body {
   font-size: 1.5rem;
 }
 
+.afternoon-tea {
+  margin-bottom: 2rem;
+}
+
 .tea-set img {
   border-radius: 15px;
 }
@@ -432,18 +436,17 @@ main {
 
 @media screen and (max-width: 425px) {
   .header {
-    width: 80%;
+    width: 25rem;
     margin: 2rem auto;
-  }
-
-  img {
-    width: 20rem;
-    margin: 0 auto;
   }
 
   .notification-bar {
     width: 100%;
-    margin: 0 100px;
+    margin: 0 50px;
+  }
+
+  .afternoon-tea {
+    margin: 2rem 8rem;
   }
 
   .notification-bar a {
@@ -453,21 +456,21 @@ main {
 
   .nav {
     width: 100%;
-    margin:300px 100px 0;
+    margin:300px 60px 0;
   }
 
-  .afternoon-tea img {
-    width: 15rem;
-    margin-left: 120px;
-  }
-
-  .afternoon-tea p {
-    margin-left: 150px;
-  }
 }
 
 @media screen and (max-width: 375px) {
+  .notification-bar {
+    width: 100%;
+    margin: 0 70px;
+  }
   .notification-bar a {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+  }
+  .nav {
+    width: 100%;
+    margin:300px 80px 0;
   }
 }
