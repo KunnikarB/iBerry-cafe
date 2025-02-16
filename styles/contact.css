@@ -38,6 +38,11 @@ body {
   background-color:white;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .header {
   margin-bottom: 5rem;
 }
@@ -52,7 +57,11 @@ body {
 .header {
   margin: 5rem;
 }
-
+.header-container {
+  background-color: pink;
+  padding: 0 1rem 2rem;
+  max-width: 100%;
+}
 .notification-bar a {
   background-color: var(--brown);
   color: var(--pink);
@@ -247,7 +256,7 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  background: linear-gradient(115deg, #ff6bbb 10%, #9f01ea 90%);
+  background-color: pink;
 }
 
 .col-25 {
@@ -437,78 +446,61 @@ input[type=submit]:hover {
 @media screen and (max-width: 789px) {
   
   .header {
-    width: 25rem;
+    max-width: 100%;
     margin: 2rem auto;
   }
   .container {
     flex-direction: column;
     gap: 1rem;
-    width: 100%;
+    max-width: 100%;
   }
-  img {
-    width: 20rem;
-    margin: 0 auto;
-  }
+  
   .notification-bar a {
     font-size: 1rem;
     align-items: center;
   }
   .container-form {
-    width: 30rem;
+    max-width: 100%;
   }
 }
 
 @media screen and (max-width: 600px) {
 
   .container {
-   flex-direction: column;
+    flex-direction: column;
     gap: 1rem;
-    width: 100%;
+    max-width: 100%;
   }
   .container-form {
-    width: 25rem;
+    max-width: 100%;
+
 
     & .col-25, .col-75 {
-      width: 100%;
+      max-width: 100%;
     }
   }
 }
 
 @media screen and (max-width: 425px) {
   .header {
-    width: 20rem;
+    max-width: 100%;
     margin: 2rem auto;
   }
 
-  img {
-    width: 20rem;
-    margin: 0 auto;
-  }
-
   .notification-bar {
-    width: 100%;
-    margin: 0 50px;
+    max-width: 100%;
   }
 
   .notification-bar a {
     font-size: 1rem;
-    width: 100%;
-  }
-
-  .nav {
-    width: 100%;
-    margin:300px 50px 0;
+    max-width: 100%;
   }
 
   .container-form {
-    width: 30rem;
-    
+    max-width: 100%;   
   }
-
-  .afternoon-tea img {
-    width: 15rem;
-    margin-left: 65px;
-  }
+  .afternoon-tea {
+    margin: 2rem 6rem;
 }
 
 @media screen and (max-width: 375px) {

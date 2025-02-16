@@ -397,7 +397,10 @@ main {
     background: violet;
 }
 
-    
+.menu-container {
+    background-color: pink;
+    padding: 1rem 1rem 3rem;
+}  
 
 /* MEDIA QUERIES */
 

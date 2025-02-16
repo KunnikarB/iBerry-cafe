@@ -44,6 +44,12 @@ body {
   border-radius: 15px;
 }
 
+.header-container {
+  background-color: pink;
+  padding: 0 1rem 2rem; 
+  max-width: 100%;
+}
+
 .logo {
   position: fixed;
   right: 25px;
@@ -71,6 +77,11 @@ body {
 .notification:hover{
   background: var(--pink);
   color: var(--white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* MAIN STYLES
@@ -206,6 +217,7 @@ body {
   margin: 30px;
   margin-bottom: 5rem;
   padding: 2rem;
+  background-color: pink;
 }
 
 .card {
@@ -445,17 +457,21 @@ main {
     margin: 2rem auto;
   }
 
+  .notification-bar a {
+    font-size: 1rem;
+    align-items: center;
+  }
+
 }
 
 @media screen and (max-width: 425px) {
   .header {
-    width: 25rem;
+    max-width: 100%;
     margin: 2rem auto;
   }
 
   .notification-bar {
-    width: 100%;
-    margin: 0 70px;
+    max-width: 100%;
   }
 
   .afternoon-tea {
@@ -463,47 +479,33 @@ main {
   }
 
   .notification-bar a {
-    font-size: 1rem;
-    width: 100%;
+    font-size: .9rem;
+    max-width: 100%;
   }
-
-  .nav {
-    width: 100%;
-    margin:300px 70px 0;
-  }
-  img {
-    width: 20rem;
-    margin: 0 auto;
-}
- .with-love {
+  
+ .afternoon-tea p {
    font-size: 1.3rem;
-   margin-left: 80px;
    width: 100%;
  }
 
- .afternoon-tea img {
-   width: 15rem;
+
+ .container{
+   margin: 0 auto;
+   max-width: 100%;
  }
- .container {
-   margin: 2rem auto;
-   width: 100%;
- }
+
  .header-container {
-   width: 100%;
+   max-width: 100%;
    margin: 2rem auto;
- }
+}
+
 }
 
 @media screen and (max-width: 375px) {
   .notification-bar {
-    width: 100%;
-    margin: 0 70px;
+    max-width: 100%;
   }
   .notification-bar a {
-    font-size: 0.9rem;
-  }
-  .nav {
-    width: 100%;
-    margin:300px 80px 0;
-  }
+    font-size: 0.6rem;
+  }  
 }
