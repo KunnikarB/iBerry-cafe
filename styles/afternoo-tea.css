@@ -6,7 +6,7 @@
     --rose300: hsl(14, 25%, 72%);
     --rose400: hsl(7, 20%, 60%);
     --rose500: hsl(12, 20%, 44%);
-    --rose900: violet;
+    --rose900: #69473E;
 }
 
 * {
@@ -18,7 +18,7 @@
 body {
     margin: 1rem;
     background: var(--white);
-    color: violet
+    color: var(--pink)
 }
 
 main > h2, main > h1 {
@@ -162,7 +162,7 @@ main {
 
 .cart-summary h2 {
     color: var(--pink);
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .cart-summary-item {
@@ -240,12 +240,12 @@ main {
 }
 
 .order-total-label {
-    color: var(--rose900);
+    color: var(--pink);
     font-size: 1rem;
 }
 
 .order-total-price {
-    color: var(--rose900);
+    color: var(--pink);
     font-size: 1rem;
     font-weight: 700;
 }
@@ -259,11 +259,11 @@ main {
     border-radius: 1.5rem;
     margin: 1rem 0 0 0;
     font-family: inherit;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .cart-summary-confirm-btn:hover {
-    background: violet;
+    background: var(--rose900);
 }
 
 /* SHOPPING CART */
@@ -291,9 +291,10 @@ main {
 }
 
 .shopping-cart h2 {
-    color: var(--rose900);
-    max-width: 10rem;
+    color: var(--pink);
+    max-width: 100%;
     margin: auto;
+    font-size: 1.5rem;
 }
 
 .shopping-cart > p {
@@ -341,13 +342,13 @@ main {
 }
 
 .shopping-cart-summary-item-price {
-    color: var(--pink);
+    color: var(--rose900);
     font-weight: 600;
     width: 3.5rem;
 }
 
 .shopping-cart-summary-item-total {
-    color: violet;
+    color: var(--pink);
     font-size: .8rem;
     font-weight: 600;
     text-align: right;
@@ -362,16 +363,16 @@ main {
     background: var(--rose50);
     border-bottom-left-radius: .5rem;
     border-bottom-right-radius: .5rem;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .shopping-cart-total-label {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .shopping-cart-total-cost {
     font-weight: 700;
-    color: violet;
+    color: var(--pink);
 }
 
 /* SHOPPING CART BUTTONS */
@@ -379,11 +380,12 @@ main {
 .pay-buttons {
     margin: 1rem 0;
     text-align: center;
+    max-width: 100%;
 }
 
 .new-order-btn {
     width: 100%;
-    max-width: 150px;
+    max-width: 250px;
     padding: .75rem;
     background: var(--pink);
     color: var(--white);
