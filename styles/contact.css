@@ -4,9 +4,6 @@
 
 :root {
   --white: #ffffff;
-  --light-grey: #edf0f1;
-  --violet: #655be1;
-  --dark-violet: #5146e1;
   --pink: #ff6bbb;
   --brown: #69473E;
   --background: #ffeeeb;
@@ -247,7 +244,8 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: violet;
+  background-color: var(--brown);
+  color: var(--pink);
 }
 
 .container-form {
@@ -344,7 +342,7 @@ input[type=submit]:hover {
 }
 
 .floating-container:hover .floating-button {
-  box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
+  box-shadow: 0 10px 25px rgba(178, 101, 162, 0.6);
   -webkit-transform: translatey(5px);
           transform: translatey(5px);
   -webkit-transition: all 0.3s;
@@ -381,7 +379,7 @@ input[type=submit]:hover {
   text-align: center;
   font-size: 23px;
   z-index: 100;
-  box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+  box-shadow: 0 10px 25px -5px rgba(220, 125, 180, 0.6);
   cursor: pointer;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -411,18 +409,18 @@ input[type=submit]:hover {
 }
 
 .floating-container .float-element:nth-child(1) {
-  background: #5146e1;
-  box-shadow: 0 20px 20px -10px rgba(66, 165, 245, 0.5);
+  background: var(--brown);
+  box-shadow: 0 20px 20px -10px rgba(195, 75, 139, 0.5);
 }
 
 .floating-container .float-element:nth-child(2) {
-  background: #4CAF50;
-  box-shadow: 0 20px 20px -10px rgba(76, 175, 80, 0.5);
+  background: var(--brown);
+  box-shadow: 0 20px 20px -10px rgba(174, 89, 153, 0.5);
 }
 
 .floating-container .float-element:nth-child(3) {
-  background: #FF9800;
-  box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
+  background: var(--brown);
+  box-shadow: 0 20px 20px -10px rgba(187, 91, 144, 0.5);
 }
 
 /* FOOTER STYLES
@@ -438,7 +436,7 @@ input[type=submit]:hover {
 }
 
 .footer-shop {
-  margin-bottom: 5rem;
+  margin-bottom: 15rem;
 }
 
 

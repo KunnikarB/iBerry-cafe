@@ -4,10 +4,7 @@
 
 :root {
   --white: #FFFFFF;
-  --light-grey: #edf0f1;
-  --violet: #655be1;
-  --dark-violet: #5146e1;
-  --pink: #ff6bbb;
+  --pink: #FC6CBB;
   --brown: #69473E;
   --background: #ffeeeb;
 }
@@ -215,7 +212,7 @@ img {
   justify-content: center;
   align-items: center;
   margin: 30px;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
   padding: 2rem;
   background-color: pink;
 }
@@ -426,6 +423,25 @@ main {
 }
 
 /* Responsive layout */
+@media screen and (max-width: 1024px) {
+  .header {
+    max-width: 100%;
+    margin: 2rem auto;
+  }
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin: 2rem auto;
+    margin-bottom: 10rem;
+  }
+  .header-container {
+    max-width: 100%;
+    margin: 2rem auto;
+  }
+  
+}
+
 @media screen and (max-width: 789px) {
   .header {
     width: 50%;
@@ -436,6 +452,7 @@ main {
     gap: 1rem;
     width: 100%;
     margin: 2rem auto;
+    margin-bottom: 10rem;
   }
   .header-container {
     width: 100%;
@@ -450,6 +467,7 @@ main {
     gap: 1rem;
     width: 100%;
     margin: 2rem auto;
+    margin-bottom: 10rem;
   }
 
   .header-container {
