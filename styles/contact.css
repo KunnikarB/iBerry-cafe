@@ -473,9 +473,6 @@ input[type=submit]:hover {
   .container-form {
     max-width: 100%;
 
-    & .col-25, .col-75 {
-      max-width: 100%;
-    }
   }
   .notification-bar a {
     font-size: .9rem;
@@ -503,11 +500,21 @@ input[type=submit]:hover {
 
   .container-form {
     max-width: 100%;
-
     & .col-25, .col-75 {
-      max-width: 100%;
+      width: 100%;
+      display: flex;
+      text-align: center;
+    }
+    & input[type=submit] {
+      width: 50%;
+    }
+
+    & .h-captcha {
+      text-align: center;
     }
   }
+
+
 
   .afternoon-tea {
     margin: 2rem 6rem;
@@ -519,7 +526,20 @@ input[type=submit]:hover {
     font-size: 0.7rem;
   }
 
+  
   .container-form {
     max-width: 100%;
+    & .col-25, .col-75 {
+      width: 100%;
+      display: flex;
+      text-align: center;
+    }
+    & input[type=submit] {
+      width: 50%;
+    }
+
+    & .h-captcha {
+      text-align: center;
+    }
   }
 }
