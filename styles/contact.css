@@ -331,8 +331,8 @@ input[type=submit]:hover {
 
 .floating-container {
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   bottom: 1rem;
   right: 2.5rem;
   margin: 35px 25px;
@@ -390,10 +390,10 @@ input[type=submit]:hover {
   position: relative;
   display: block;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin: 15px auto;
-  color: white;
+  color: var(--pink);
   font-weight: 500;
   text-align: center;
   line-height: 50px;
@@ -405,7 +405,7 @@ input[type=submit]:hover {
 
 .floating-container .float-element i {
   vertical-align: middle;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: .5rem;
 }
 
@@ -434,6 +434,8 @@ input[type=submit]:hover {
   align-items: center;
   padding: 5px;
   color: var(--pink);
+  font-family: "Mansalva", serif;
+  font-size: 14px;
 }
 
 .footer-shop {
