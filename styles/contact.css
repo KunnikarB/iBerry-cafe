@@ -239,7 +239,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right;
+  float: center;
 }
 
 input[type=submit]:hover {
@@ -248,7 +248,7 @@ input[type=submit]:hover {
 }
 
 .container-form {
-  width: 30rem;
+  width: 50rem;
   margin: 4rem auto;
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -276,9 +276,11 @@ input[type=submit]:hover {
 }
 
 .h-captcha {
-  text-align: right;
-  margin-top: 10px;
+  text-align: center;
+  margin: 10px;
 }
+
+
 
 /*End of form section*/
 
@@ -474,9 +476,13 @@ input[type=submit]:hover {
     & .col-25, .col-75 {
       max-width: 100%;
     }
+  }
   .notification-bar a {
     font-size: .9rem;
     max-width: 100%;
+  }
+  .h-captcha {
+    text-align: right;
   }
 }
 
@@ -496,10 +502,16 @@ input[type=submit]:hover {
   }
 
   .container-form {
-    max-width: 100%;   
+    max-width: 100%;
+
+    & .col-25, .col-75 {
+      max-width: 100%;
+    }
   }
+
   .afternoon-tea {
     margin: 2rem 6rem;
+}
 }
 
 @media screen and (max-width: 375px) {
@@ -508,7 +520,6 @@ input[type=submit]:hover {
   }
 
   .container-form {
-    width: 25rem;
-    margin: 2rem auto;
+    max-width: 100%;
   }
 }

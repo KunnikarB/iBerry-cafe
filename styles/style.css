@@ -60,7 +60,7 @@ body {
   background-color: var(--brown);
   color: var(--pink);
   font-size: 20px;
-  margin-left: 1rem;
+  margin-left: .5rem;
   font-weight: bolder;
 }
 
