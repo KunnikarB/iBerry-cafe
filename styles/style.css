@@ -476,7 +476,7 @@ main {
   }
 
   .notification-bar a {
-    font-size: 1rem;
+    font-size: .9rem;
     align-items: center;
   }
 
@@ -497,7 +497,7 @@ main {
   }
 
   .notification-bar a {
-    font-size: .9rem;
+    font-size: .7rem;
     max-width: 100%;
   }
   
