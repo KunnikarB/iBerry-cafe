@@ -2,6 +2,8 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
 :root {
   --white: #ffffff;
   --pink: #ff6bbb;
@@ -25,13 +27,13 @@ a {
 }
 
 body {
-  font-family: "Mansalva", sans-serif;
+  font-family: "Coiny", serif;
   font-weight: 400;
   font-size: large;
   font-style: normal;
   text-align: center;
   padding: 0 20px;
-  color: var(--white);
+  color: var(--brown);
   background-color:white;
 }
 
@@ -44,13 +46,6 @@ img {
   margin-bottom: 5rem;
 }
 
-.logo {
-  position: fixed;
-  right: 25px;
-  bottom: 35px;
-  display: flex;
-}
-
 .header {
   margin: 5rem;
 }
@@ -59,13 +54,6 @@ img {
   padding: 0 1rem 2rem;
   max-width: 100%;
 }
-.notification-bar a {
-  background-color: var(--brown);
-  color: var(--pink);
-  font-size: 20px;
-  margin-left: 1rem;
-}
-
 
 .notification {
   position: relative;
@@ -76,10 +64,21 @@ img {
   color: var(--pink);
 }
 
-.notification:hover{
+.notification-bar a {
+  background-color: var(--brown);
+  color: var(--pink);
+  font-size: 20px;
+  margin-left: 1rem;
+}
+
+.notification-bar a:hover{
   background: var(--pink);
   color: var(--white);
 }
+
+
+
+
 
 /* MAIN STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -165,7 +164,7 @@ img {
   left: 0;
   transform: translateY(calc(-100% - 5px));
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
@@ -181,19 +180,19 @@ img {
 }
 
 .nav input:checked ~ .menu li:nth-child(1) {
-  top: -210px;
+  top: -230px;
   transition-delay: 0.1s;
 }
 
 .nav input:checked ~ .menu li:nth-child(2) {
-  top: -160px;
-  left: calc(50% - 75px);
+  top: -180px;
+  left: calc(50% - 95px);
   transition-delay: 0.2s;
 }
 
 .nav input:checked ~ .menu li:nth-child(3) {
-  top: -160px;
-  left: calc(50% + 75px);
+  top: -180px;
+  left: calc(50% + 95px);
   transition-delay: 0.3s;
 }
 
@@ -472,10 +471,12 @@ input[type=submit]:hover {
   .container-form {
     max-width: 100%;
 
-
     & .col-25, .col-75 {
       max-width: 100%;
     }
+  .notification-bar a {
+    font-size: .9rem;
+    max-width: 100%;
   }
 }
 
@@ -490,7 +491,7 @@ input[type=submit]:hover {
   }
 
   .notification-bar a {
-    font-size: 1rem;
+    font-size: .8rem;
     max-width: 100%;
   }
 
@@ -503,7 +504,7 @@ input[type=submit]:hover {
 
 @media screen and (max-width: 375px) {
   .notification-bar a {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .container-form {

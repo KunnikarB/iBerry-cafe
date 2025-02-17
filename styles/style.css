@@ -2,6 +2,8 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
 :root {
   --white: #FFFFFF;
   --pink: #FC6CBB;
@@ -25,14 +27,14 @@ a {
 }
 
 body {
-  font-family: "Mansalva", sans-serif;
+  font-family: "Coiny", serif;
   font-weight: 400;
-  font-size: large;
+  font-size: 20px;
   font-style: normal;
   text-align: center;
   padding: 0 20px;
   background-color: var(--white);
-  color: var(--white);
+  color: var(--brown);
   margin: 2rem auto;
 }
 
@@ -47,18 +49,24 @@ body {
   max-width: 100%;
 }
 
-.logo {
+/* .logo {
   position: fixed;
   right: 25px;
   bottom: 35px;
   display: flex;
-}
+} */
 
 .notification-bar a {
   background-color: var(--brown);
   color: var(--pink);
   font-size: 20px;
   margin-left: 1rem;
+  font-weight: bolder;
+}
+
+.notification-bar a:hover {
+  background: var(--pink);
+  color: var(--white);
 }
 
 .notification {
@@ -67,13 +75,7 @@ body {
   margin: auto;
   padding: 10px;
   border-radius: 15px;
-}
-
-
-
-.notification:hover{
-  background: var(--pink);
-  color: var(--white);
+  
 }
 
 img {
@@ -165,13 +167,13 @@ img {
   left: 0;
   transform: translateY(calc(-100% - 5px));
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s;
   color: var(--pink);
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .nav input:checked + label {
@@ -181,19 +183,19 @@ img {
 }
 
 .nav input:checked ~ .menu li:nth-child(1) {
-  top: -210px;
+  top: -230px;
   transition-delay: 0.1s;
 }
 
 .nav input:checked ~ .menu li:nth-child(2) {
-  top: -160px;
-  left: calc(50% - 75px);
+  top: -180px;
+  left: calc(50% - 95px);
   transition-delay: 0.2s;
 }
 
 .nav input:checked ~ .menu li:nth-child(3) {
-  top: -160px;
-  left: calc(50% + 75px);
+  top: -180px;
+  left: calc(50% + 95px);
   transition-delay: 0.3s;
 }
 
@@ -524,6 +526,6 @@ main {
     max-width: 100%;
   }
   .notification-bar a {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }  
 }
